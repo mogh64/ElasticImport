@@ -1,4 +1,4 @@
 # ElasticImport
 elastic Importer
-#Command
+# Command
 dotnet elasticimporter.dll [Json Path] [Model Name]
