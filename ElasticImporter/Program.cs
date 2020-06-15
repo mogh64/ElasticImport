@@ -20,15 +20,17 @@ namespace ElasticImporter
                 Console.WriteLine("Please Specify Input Json Path and Model Name");
                 return;
             }
+
             string inputPath = args[0];
             var jsonString = File.ReadAllText(inputPath);
-            var indexer = new IndexerFactory().CreateIndexer("City");
+            var model = args[1];
+            var indexer = new IndexerFactory().CreateIndexer(model);
             if (indexer == null)
             {
                 Console.WriteLine("Model Argument is incorrect!!");
                 return;
             }
-            indexer.IndexJson(jsonString);           
+            indexer.IndexJson(jsonString);
 
             Console.ReadKey();
         }
